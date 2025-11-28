@@ -1,0 +1,57 @@
+notfound-container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+.notfound-content h1 {
+  font-size: 8rem;
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: 5px;
+}
+
+.notfound-content h2 {
+  font-size: 2.5rem;
+  margin: 20px 0 10px;
+  font-weight: 700;
+}
+
+.notfound-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.85;
+}
+
+.btn-home {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #ff6f61;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 30px;
+  box-shadow: 0 6px 15px rgba(255, 111, 97, 0.4);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-home:hover {
+  background: #ff4b3a;
+  box-shadow: 0 8px 20px rgba(255, 75, 58, 0.6);
+}
+
+
+
+
+
+
+
+
+
+
