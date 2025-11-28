@@ -1,4 +1,4 @@
-<input type="text" placeholder="Rechercher par titre ou catégorie" [(ngModel)]="searchText">
+<!--<input type="text" placeholder="Rechercher par titre ou catégorie" [(ngModel)]="searchText">
 
 <div *ngFor="let suggestion of suggestions ">
   <h3>{{ suggestion.title }}</h3>
@@ -16,3 +16,37 @@
 <ul>
   <li *ngFor="let fav of favorites">{{ fav.title }}</li>
 </ul>
+
+-->
+<input type="text" placeholder="Rechercher par titre ou catégorie" class="form-control mb-3" [(ngModel)]="searchText">
+
+<div class="row">
+  <div class="col-md-4 mb-3" *ngFor="let suggestion of suggestions">
+    <ng-container *ngIf="
+      (suggestion.title.toLowerCase().includes(searchText.toLowerCase()) || 
+       suggestion.category.toLowerCase().includes(searchText.toLowerCase()) || 
+       !searchText)
+    ">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{ suggestion.title }}</h5>
+          <p class="card-text">{{ suggestion.description }}</p>
+          <p class="card-text"><strong>Catégorie:</strong> {{ suggestion.category }}</p>
+          <p class="card-text"><strong>Date:</strong> {{ suggestion.date | date }}</p>
+          <p class="card-text"><strong>Status:</strong> {{ suggestion.status }}</p>
+          
+          <div *ngIf="suggestion.status !== 'refusee'">
+            <button class="btn btn-primary me-2" (click)="like(suggestion)">Like ({{ suggestion.likes }})</button>
+            <button class="btn btn-warning" (click)="addToFavorites(suggestion)">Ajouter aux favoris</button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+<h3>Favoris :</h3>
+<ul>
+  <li *ngFor="let fav of favorites">{{ fav.title }}</li>
+</ul>
+
