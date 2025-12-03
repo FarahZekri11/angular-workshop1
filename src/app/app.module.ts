@@ -10,6 +10,9 @@ import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { ListSuggestionComponent } from './core/list-suggestion/list-suggestion.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { DetailProdComponent } from './detail-prod/detail-prod.component';
+import { RouterModule } from '@angular/router';
+import { SuggestionsModule } from './features/suggestions/suggestions.module';
 
 @NgModule({
   declarations: [
@@ -18,12 +21,15 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HeaderComponent,
     FooterComponent,
     ListSuggestionComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    DetailProdComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule,
+    SuggestionsModule
 
   ],
   providers: [],
