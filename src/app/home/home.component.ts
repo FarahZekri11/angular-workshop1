@@ -2,6 +2,15 @@ import { Component } from '@angular/core';
 import { NgIf } from "../../../node_modules/@angular/common/index";
 import { NgModule } from '@angular/core';
 import { product } from '../models/product';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from '../app-routing.module';
+import { AppComponent } from '../app.component';
+import { DetailProdComponent } from '../detail-prod/detail-prod.component';
+import { FooterComponent } from '../footer/footer.component';
+import { HeaderComponent } from '../header/header.component';
+import { NotFoundComponent } from '../not-found/not-found.component';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -29,5 +38,26 @@ export class HomeComponent {
     const product = this.products.find(p => p.id === id);
       product!.quantity--;
   }
+}
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    HeaderComponent,
+    FooterComponent,
+    NotFoundComponent,
+    DetailProdComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    RouterModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule {
 }
 

@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { Suggestion } from '../../models/suggestion';
+import { Suggestion } from '../../../models/suggestion';
 
 @Component({
   selector: 'app-list-suggestion',
   templateUrl: './list-suggestion.component.html',
-  styleUrl: './list-suggestion.component.css'
+  styleUrls: ['./list-suggestion.component.css']
 })
 export class ListSuggestionComponent {
- suggestions: Suggestion[] = [
+  suggestions: Suggestion[] = [
     {
       id: 1,
       title: 'Organiser une journée team building',
@@ -71,4 +71,3 @@ export class ListSuggestionComponent {
   // Barre de recherche
   searchText: string = '';
 }
-

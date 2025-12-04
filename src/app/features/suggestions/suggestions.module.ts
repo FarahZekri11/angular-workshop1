@@ -3,15 +3,21 @@ import { CommonModule } from '@angular/common';
 
 import { SuggestionsRoutingModule } from './suggestions-routing.module';
 import { SuggestionsComponent } from './suggestions.component';
+import { SuggestionDetailsComponent } from './suggestion-details/suggestion-details.component';
+import { ListSuggestionComponent } from './list-suggestion/list-suggestion.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
-    SuggestionsComponent
+    SuggestionsComponent,
+    SuggestionDetailsComponent,
+    ListSuggestionComponent
   ],
   imports: [
     CommonModule,
-    SuggestionsRoutingModule
+    SuggestionsRoutingModule,
+    FormsModule 
   ]
 })
 export class SuggestionsModule { }
